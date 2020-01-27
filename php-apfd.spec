@@ -4,7 +4,7 @@
 #
 Name     : php-apfd
 Version  : 1.0.1
-Release  : 1
+Release  : 2
 URL      : https://pecl.php.net//get/apfd-1.0.1.tgz
 Source0  : https://pecl.php.net//get/apfd-1.0.1.tgz
 Summary  : No detailed summary available
