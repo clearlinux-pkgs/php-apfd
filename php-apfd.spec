@@ -4,7 +4,7 @@
 #
 Name     : php-apfd
 Version  : 1.0.1
-Release  : 2
+Release  : 3
 URL      : https://pecl.php.net//get/apfd-1.0.1.tgz
 Source0  : https://pecl.php.net//get/apfd-1.0.1.tgz
 Summary  : No detailed summary available
@@ -26,6 +26,7 @@ lib components for the php-apfd package.
 
 %prep
 %setup -q -n apfd-1.0.1
+cd %{_builddir}/apfd-1.0.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -44,4 +45,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/apfd.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/apfd.so
