@@ -4,7 +4,7 @@
 #
 Name     : php-apfd
 Version  : 1.0.3
-Release  : 15
+Release  : 16
 URL      : https://pecl.php.net/get/apfd-1.0.3.tgz
 Source0  : https://pecl.php.net/get/apfd-1.0.3.tgz
 Summary  : No detailed summary available
@@ -47,4 +47,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20200930/apfd.so
+/usr/lib64/extensions/no-debug-non-zts-20210902/apfd.so
