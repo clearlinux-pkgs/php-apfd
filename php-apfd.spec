@@ -4,13 +4,14 @@
 #
 Name     : php-apfd
 Version  : 1.0.3
-Release  : 32
+Release  : 33
 URL      : https://pecl.php.net/get/apfd-1.0.3.tgz
 Source0  : https://pecl.php.net/get/apfd-1.0.3.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: php-apfd-lib = %{version}-%{release}
+Requires: php-apfd-license = %{version}-%{release}
 BuildRequires : buildreq-php
 
 %description
@@ -21,9 +22,18 @@ BuildRequires : buildreq-php
 %package lib
 Summary: lib components for the php-apfd package.
 Group: Libraries
+Requires: php-apfd-license = %{version}-%{release}
 
 %description lib
 lib components for the php-apfd package.
+
+
+%package license
+Summary: license components for the php-apfd package.
+Group: Default
+
+%description license
+license components for the php-apfd package.
 
 
 %prep
@@ -39,6 +49,8 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-apfd
+cp %{_builddir}/apfd-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-apfd/a8e63d3d3705690cf7268d26d3c29d78e6b497d9
 %make_install
 
 
@@ -47,4 +59,8 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/apfd.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/apfd.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-apfd/a8e63d3d3705690cf7268d26d3c29d78e6b497d9
